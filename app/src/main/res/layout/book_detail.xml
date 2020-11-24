@@ -18,30 +18,12 @@
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:gravity="center"
-            android:text="HOME"
+            android:text="BOOK DETAIL"
             android:textColor="@android:color/white"
             android:textSize="25dp"
             android:textStyle="bold" />
     </RelativeLayout>
 
-
-
-
-    <RelativeLayout
-        android:id="@+id/homecategory"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
-        android:layout_above="@id/book">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Most Popular Book"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_gravity="left"/>
-    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -133,6 +115,29 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="356dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/book">
+            <TextView
+                android:id="@+id/revtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REVIEW"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+            <ListView
+                android:id="@+id/review"
+                android:layout_below="@id/revtext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

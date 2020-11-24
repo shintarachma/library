@@ -7,10 +7,19 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:background="@drawable/header"
         android:id="@+id/myDashboard">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/backbtn"
+            android:layout_width="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:menu="@menu/backbtn"
+            />
 
         <TextView
 
@@ -23,8 +32,6 @@
             android:textSize="25dp"
             android:textStyle="bold" />
     </RelativeLayout>
-
-
 
 
     <RelativeLayout
