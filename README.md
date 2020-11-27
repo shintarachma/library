@@ -11,4 +11,10 @@ Adding application's layout, menu and drawable
 #### 2. 27 November 2020 
 ```
 Adding new layout.
+
+Updating layout
+
+Adding logo
+
+Adding Pre-login, login and registration activity
 ```
