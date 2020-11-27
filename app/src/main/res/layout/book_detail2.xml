@@ -18,9 +18,9 @@
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:gravity="center"
-            android:text="BOOK DETAIL"
+            android:text="@string/book_detail"
             android:textColor="@android:color/white"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
@@ -51,6 +51,7 @@
                 android:padding="10dp">
 
                 <ImageView
+                    android:id="@+id/book_image"
                     android:layout_width="100dp"
                     android:layout_height="150dp"
                     android:layout_gravity=""
@@ -68,7 +69,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="TITLE:"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -78,7 +78,6 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/title"
                         android:layout_gravity="center_horizontal"
-                        android:text="AUTHOR:"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -97,9 +96,9 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/title"
                             android:layout_gravity="center_horizontal"
-                            android:text="The word “synopsis” comes from the Ancient Greek word synopsesthai which means quite literally “a comprehensive view.” A novel synopsis includes a brief summary of your story's main plot, subplots, and the ending, a few character descriptions, and an overview of your major themes."
-                            android:textSize="10dp"
-                            android:textStyle="bold" />
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -129,9 +128,9 @@
                 android:id="@+id/revtext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="REVIEW"
+                android:text="@string/review"
                 android:gravity="center"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <androidx.cardview.widget.CardView
@@ -171,7 +170,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Jhon Doe"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -183,9 +181,9 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/name"
                             android:layout_gravity="center_horizontal"
-                            android:text="The word “synopsis” comes from the Ancient Greek word synopsesthai which means quite literally “a comprehensive view.” A novel synopsis includes a brief summary of your story's main plot, subplots, and the ending, a few character descriptions, and an overview of your major themes."
-                            android:textSize="10dp"
-                            android:textStyle="bold" />
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
 
 
 

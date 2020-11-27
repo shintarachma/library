@@ -12,7 +12,7 @@
         android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="66dp"
-        android:text="MyProfile"
+        android:text="@string/myprofile"
         android:textColor="#3F51B5"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -47,7 +47,6 @@
                     android:id="@+id/textView11"
                     android:layout_width="284dp"
                     android:layout_height="80dp"
-                    android:text="Jhon Doe"
                     android:textColor="#3F51B5"
                     android:textSize="36sp"
                     tools:layout_editor_absoluteX="182dp"
@@ -57,61 +56,10 @@
                     android:id="@+id/textView12"
                     android:layout_width="284dp"
                     android:layout_height="63dp"
-                    android:text="jhondoe@gmail.com"
                     android:textColor="#1C1A1A"
                     android:textSize="30sp"
                     tools:layout_editor_absoluteX="182dp"
                     tools:layout_editor_absoluteY="140dp" />
-
-                <TextButton
-                    android:id="@+id/notif"
-                    android:layout_width="212dp"
-                    android:layout_height="45dp"
-                    android:background="#"
-                    android:text="Notifications"
-                    android:textColor="@color/black"
-                    tools:layout_editor_absoluteX="107dp"
-                    tools:layout_editor_absoluteY="513dp" />
-
-                <TextButton
-                    android:id="@+id/privacy"
-                    android:layout_width="212dp"
-                    android:layout_height="45dp"
-                    android:background="#"
-                    android:text="Privacy"
-                    android:textColor="@color/black"
-                    tools:layout_editor_absoluteX="107dp"
-                    tools:layout_editor_absoluteY="467dp" />
-
-                <TextButton
-                    android:id="@+id/security"
-                    android:layout_width="212dp"
-                    android:layout_height="45dp"
-                    android:background="#"
-                    android:text="Security"
-                    android:textColor="@color/black"
-                    tools:layout_editor_absoluteX="107dp"
-                    tools:layout_editor_absoluteY="421dp" />
-
-                <TextButton
-                    android:id="@+id/help"
-                    android:layout_width="212dp"
-                    android:layout_height="45dp"
-                    android:background="#"
-                    android:text="Help"
-                    android:textColor="@color/black"
-                    tools:layout_editor_absoluteX="107dp"
-                    tools:layout_editor_absoluteY="333dp" />
-
-                <TextButton
-                    android:id="@+id/about"
-                    android:layout_width="212dp"
-                    android:layout_height="45dp"
-                    android:background="#FFFFF"
-                    android:text="About"
-                    android:textColor="@color/black"
-                    tools:layout_editor_absoluteX="107dp"
-                    tools:layout_editor_absoluteY="376dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

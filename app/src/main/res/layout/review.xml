@@ -45,7 +45,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Jhon Doe"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -57,9 +56,9 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/name"
                         android:layout_gravity="center_horizontal"
-                        android:text="The word “synopsis” comes from the Ancient Greek word synopsesthai which means quite literally “a comprehensive view.” A novel synopsis includes a brief summary of your story's main plot, subplots, and the ending, a few character descriptions, and an overview of your major themes."
-                        android:textSize="10dp"
-                        android:textStyle="bold" />
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        tools:ignore="SmallSp" />
 
 
 
