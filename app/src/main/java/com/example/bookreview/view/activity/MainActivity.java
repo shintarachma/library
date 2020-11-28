@@ -1,4 +1,4 @@
-package com.example.bookreview;
+package com.example.bookreview.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 
-import com.example.bookreview.view.activity.LoginActivity;
+import com.example.bookreview.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -46,14 +46,11 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-
         signOut = (Button) findViewById(R.id.sign_out);
-
 
         if (progressBar != null) {
             progressBar.setVisibility(View.GONE);
         }
-
 
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 signOut();
             }
         });
-
     }
 
     //sign out method
