@@ -86,7 +86,7 @@
                     android:background="@drawable/shape_button"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:onClick="@{loginViewModel::attemptLogin}"
-                    android:text="@string/action_sign_in_short"
+                    android:text="@string/action_sign_in"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 

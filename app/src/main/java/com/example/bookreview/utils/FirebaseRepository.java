@@ -2,7 +2,7 @@ package com.example.bookreview.utils;
 
 import android.app.Application;
 import android.content.Intent;
-import android.net.Uri;
+
 import androidx.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
@@ -18,7 +18,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.bookreview.R;
 import com.example.bookreview.model.User;
-import com.example.bookreview.view.activity.NavigationActivity;
 
 import static com.example.bookreview.utils.Constants.LOG_TAG;
 import static com.example.bookreview.utils.Constants.USERS;
