@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Patrick\\KULIAH\\SEMESTER5\\MP\\Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Patrick\\KULIAH\\SEMESTER5\\MP\\Project\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Patrick\\KULIAH\\SEMESTER5\\MP\\Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
+        "source": "C:\\Patrick\\KULIAH\\SEMESTER5\\MP\\Project\\app\\src\\main\\res\\layout\\activity_register.xml"
+    }
+]
