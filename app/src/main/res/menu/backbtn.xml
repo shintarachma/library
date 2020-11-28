@@ -1,13 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="80dp"
+        android:background="@drawable/header"
+        android:id="@+id/myDashboard">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="HOME"
+            android:textColor="@android:color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/homecategory"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_above="@id/book">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Most Popular Book"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="left"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="562dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/book"
@@ -44,6 +82,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:text="TITLE:"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -53,11 +92,12 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/title"
                         android:layout_gravity="center_horizontal"
+                        android:text="AUTHOR:"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/synopsiscontainer"
+                        android:id="@+id/synopsisContainer"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:layout_below="@id/author"
@@ -71,9 +111,9 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/title"
                             android:layout_gravity="center_horizontal"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            tools:ignore="SmallSp" />
+                            android:text="The word “synopsis” comes from the Ancient Greek word synopsesthai which means quite literally “a comprehensive view.” A novel synopsis includes a brief summary of your story's main plot, subplots, and the ending, a few character descriptions, and an overview of your major themes."
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -95,4 +135,18 @@
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
-</RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/bottom_menu" />
+    </RelativeLayout>
+
+</LinearLayout>

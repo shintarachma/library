@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical">
 
     <RelativeLayout
@@ -19,30 +18,12 @@
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:gravity="center"
-            android:text="HOME"
+            android:text="@string/book_detail"
             android:textColor="@android:color/white"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
-
-
-
-    <RelativeLayout
-        android:id="@+id/homecategory"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
-        android:layout_above="@id/book">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Most Popular Book"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_gravity="left"/>
-    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -66,6 +47,7 @@
                 android:padding="10dp">
 
                 <ImageView
+                    android:id="@+id/book_image"
                     android:layout_width="100dp"
                     android:layout_height="150dp"
                     android:layout_gravity=""
@@ -83,7 +65,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="TITLE:"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -93,12 +74,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/title"
                         android:layout_gravity="center_horizontal"
-                        android:text="AUTHOR:"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/synopsiscontainer"
+                        android:id="@+id/synopsisContainer"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:layout_below="@id/author"
@@ -112,9 +92,9 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/title"
                             android:layout_gravity="center_horizontal"
-                            android:text="The word “synopsis” comes from the Ancient Greek word synopsesthai which means quite literally “a comprehensive view.” A novel synopsis includes a brief summary of your story's main plot, subplots, and the ending, a few character descriptions, and an overview of your major themes."
-                            android:textSize="10dp"
-                            android:textStyle="bold" />
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -123,7 +103,7 @@
                         style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/synopsiscontainer"
+                        android:layout_below="@id/synopsisContainer"
                         android:layout_marginTop="10dp"
                         android:isIndicator="true"
                         android:numStars="5"
@@ -134,6 +114,28 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="356dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/book">
+            <TextView
+                android:id="@+id/revtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/review"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <ListView
+                android:id="@+id/review"
+                android:layout_below="@id/revtext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -151,4 +153,3 @@
     </RelativeLayout>
 
 </LinearLayout>
-
