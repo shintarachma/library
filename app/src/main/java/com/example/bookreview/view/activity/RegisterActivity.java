@@ -1,6 +1,7 @@
 package com.example.bookreview.view.activity;
 
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.databinding.DataBindingUtil;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         mActivityRegisterBinding = DataBindingUtil.setContentView(this, R.layout.activity_register);
-        mRegisterViewModel = ViewModelProviders.of(this, new RegisterViewModelFactory(getApplication()))
+        mRegisterViewModel = new ViewModelProvider(this, new RegisterViewModelFactory(getApplication()))
                 .get(RegisterViewModel.class);
         mActivityRegisterBinding.setRegisterViewModel(mRegisterViewModel);
     }

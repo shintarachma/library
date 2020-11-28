@@ -1,5 +1,6 @@
 package com.example.bookreview.view.activity;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.databinding.DataBindingUtil;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         mActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-        mLoginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory(getApplication(), FirebaseAuth.getInstance()))
+        mLoginViewModel = new ViewModelProvider(this, new LoginViewModelFactory(getApplication(), FirebaseAuth.getInstance()))
                 .get(LoginViewModel.class);
         mActivityLoginBinding.setLoginViewModel(mLoginViewModel);
     }
