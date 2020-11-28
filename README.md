@@ -18,3 +18,10 @@ Adding logo
 
 Adding Pre-login, login and registration activity
 ```
+
+#### 2. 28 November 2020 
+```
+Updating Login and Registration Activity
+
+Updating Layouts
+```
