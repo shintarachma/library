@@ -28,4 +28,6 @@ Updating Layouts
 Adding laravel-api project files
 
 Adding Book, BookResult, APIClient, BooksService, and dependencies
+
+Re-arranging Project Structure
 ```
