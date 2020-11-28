@@ -26,4 +26,6 @@ Updating Login and Registration Activity
 Updating Layouts
 
 Adding laravel-api project files
+
+Adding Book, BookResult, APIClient, BooksService, and dependencies
 ```
