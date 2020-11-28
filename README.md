@@ -24,4 +24,6 @@ Adding Pre-login, login and registration activity
 Updating Login and Registration Activity
 
 Updating Layouts
+
+Adding laravel-api project files
 ```
