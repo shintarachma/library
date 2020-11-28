@@ -29,6 +29,17 @@
     <string name="author_1">AUTHOR:</string>
     <string name="review">REVIEW</string>
     <string name="category">CATEGORY</string>
+    <string name="action_register">Register</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="sign_in_successful">Sign In Successful</string>
+    <string name="error_incorrect_email_or_password">Incorrect email or password</string>
+    <string name="registration_successful">Registration Successful</string>
+    <string name="email_already_exists">Email Already Exists</string>
+    <string name="error_field_required">Required</string>
+    <string name="error_invalid_email">Invalid Email</string>
+    <string name="error_invalid_password">Invalid Password</string>
+    <string name="error_invalid_name">Invalid Name</string>
 
 
 </resources>

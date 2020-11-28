@@ -1,4 +1,4 @@
-package com.example.bookreview.view.viewmodel;
+package com.example.bookreview.viewmodel;
 
 import android.app.Application;
 
