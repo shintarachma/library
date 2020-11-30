@@ -31,3 +31,13 @@ Adding Book, BookResult, APIClient, BooksService, and dependencies
 
 Re-arranging Project Structure
 ```
+
+#### 3. 29 November 2020 
+```
+Updating api server to google books api
+```
+
+#### 4. 30 November 2020 
+```
+Update BooksService.java
+```
