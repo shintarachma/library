@@ -8,5 +8,5 @@ import retrofit2.http.Query;
 
 public interface BooksService {
     @GET("volumes")
-    Call<BookResponse> getBooks(@Query("q") String query);
+    Call<BookResponse> getBooks(@Query("q") String query, @Query("maxResults") Integer maxResults);
 }
