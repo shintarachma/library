@@ -36,3 +36,8 @@ Re-arranging Project Structure
 ```
 Updating api server to google books api
 ```
+
+#### 4. 30 November 2020 
+```
+Update BooksService.java
+```
