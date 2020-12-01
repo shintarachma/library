@@ -48,5 +48,7 @@
     <string name="library">LIBRARY</string>
     <string name="profile">PROFILE</string>
     <string name="title_activity_main">Main</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
