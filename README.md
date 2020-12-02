@@ -46,5 +46,13 @@ Update BooksService.java
 ```
 Adding navigation bar
 
-Update layout fragment_home, fragment_profile, fragment_search
+```
+
+#### 4. 02 December 2020
+```
+Updating main activity
+
+Adding profile, search, home, library fragment.
+
+Update layout profile
 ```

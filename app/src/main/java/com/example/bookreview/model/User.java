@@ -9,6 +9,7 @@ public class User {
     public String password;
     public String firstName;
     public String lastName;
+    public String profileImage;
 
     /**
      * Empty constructor
@@ -24,11 +25,12 @@ public class User {
      * @param firstName    first name
      * @param lastName     last name
      */
-    public User(String email, String password, String firstName, String lastName) {
+    public User(String email, String password, String firstName, String lastName, String profileImage) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.profileImage = profileImage;
     }
 
     /**

@@ -38,7 +38,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/profile"
+                    android:id="@+id/fragment_profile_image"
                     android:layout_width="139dp"
                     android:layout_height="121dp"
                     android:layout_marginStart="24dp"
@@ -49,7 +49,7 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/fragment_profile_name"
                     android:layout_width="200dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -60,7 +60,7 @@
                     app:layout_constraintTop_toTopOf="@+id/profile" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/fragment_profile_email"
                     android:layout_width="200dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -70,8 +70,22 @@
                     app:layout_constraintStart_toEndOf="@+id/profile"
                     app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/activity_pre_login_register_button"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_button"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="signOut"
+                    android:text="@string/sign_out"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="161dp"
+                    tools:layout_editor_absoluteY="569dp" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 

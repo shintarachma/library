@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.bookreview.view.activity.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -86,7 +87,7 @@ public class FirebaseRepository {
                             Toast.makeText(application.getApplicationContext(), R.string.sign_in_successful,
                                     Toast.LENGTH_SHORT).show();
 
-                            Intent navigationIntent = new Intent(application.getApplicationContext(), NavigationActivity.class);
+                            Intent navigationIntent = new Intent(application.getApplicationContext(), MainActivity.class);
                             navigationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             application.startActivity(navigationIntent);
 
@@ -110,6 +111,7 @@ public class FirebaseRepository {
      * @param password    user password
      * @param firstName   user first name
      * @param lastName    user last name
+     * @param imageUri    profile image uri
      * @param application application
      */
     public void register(final String email, final String password, final String firstName, final String lastName, final Application application) {
@@ -123,7 +125,7 @@ public class FirebaseRepository {
 
                             // Create new User object
                             String uid = mAuth.getCurrentUser().getUid();
-                            User newUser = new User(email, password, firstName, lastName);
+                            User newUser = new User(email, password, firstName, lastName, "");
 
                             // Add the new user to Database
                             addUserToDatabase(uid, newUser, application);
@@ -162,7 +164,7 @@ public class FirebaseRepository {
                     Log.d(LOG_TAG, "addUserToDatabase:success");
 
                     // Add user to database successful, start navigation activity
-                    Intent navigationIntent = new Intent(application.getApplicationContext(), NavigationActivity.class);
+                    Intent navigationIntent = new Intent(application.getApplicationContext(), MainActivity.class);
                     navigationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     application.startActivity(navigationIntent);
                 } else {
