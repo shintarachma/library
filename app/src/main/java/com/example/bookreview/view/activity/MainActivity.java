@@ -12,8 +12,6 @@ import androidx.fragment.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 
 import com.example.bookreview.R;
@@ -27,9 +25,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static com.example.bookreview.utils.Constants.LOG_TAG;
 
-public class MainActivity extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener,
+        SearchFragment.OnFragmentInteractionListener, HomeFragment.OnFragmentInteractionListener,
+        LibraryFragment.OnFragmentInteractionListener {
 
-    private Button signOut;
     private final Fragment mProfileFragment = ProfileFragment.newInstance();
     private final Fragment mHomeFragment = HomeFragment.newInstance();
     private final Fragment mSearchFragment = SearchFragment.newInstance();
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
     private FirebaseAuth auth;
 
     private Fragment mActiveFragment = mHomeFragment;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -128,13 +128,11 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
     public boolean onOptionsItemSelected(final MenuItem item) {
         int id = item.getItemId();
 
-        switch (id) {
-            case R.id.action_sign_out:
+        if(id == R.id.action_sign_out) {
                 // Sign out the current user
                 FirebaseAuth.getInstance().signOut();
                 finish();
                 Log.d(LOG_TAG, "User is signed out");
-                break;
         }
         return super.onOptionsItemSelected(item);
     }

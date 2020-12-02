@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,7 +34,7 @@ public class ProfileFragment extends Fragment {
 
     private DatabaseReference mDatabaseRef;
     private FirebaseUser mUser;
-
+    private Button signOut;
     private TextView mName;
     private TextView mEmail;
     private ImageView mProfileImg;
@@ -118,6 +119,11 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+    }
+
+    public void signOut() {
+        FirebaseAuth.getInstance().signOut();
+        Log.d(LOG_TAG, "User is signed out");
     }
 
     /**

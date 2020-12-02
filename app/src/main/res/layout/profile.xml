@@ -55,9 +55,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:textColor="#3F51B5"
-                    android:textSize="36sp"
-                    app:layout_constraintStart_toEndOf="@+id/profile"
-                    app:layout_constraintTop_toTopOf="@+id/profile" />
+                    android:textSize="36sp" />
 
                 <TextView
                     android:id="@+id/fragment_profile_email"
@@ -66,9 +64,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:textColor="#1C1A1A"
-                    android:textSize="30sp"
-                    app:layout_constraintStart_toEndOf="@+id/profile"
-                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                    android:textSize="30sp" />
 
                 <Button
                     android:id="@+id/activity_pre_login_register_button"
