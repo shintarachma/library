@@ -104,4 +104,22 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    /**
+     * Get profile image
+     *
+     * @return profile image
+     */
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    /**
+     * Set profile image
+     *
+     * @param profileImage profile image
+     */
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
 }
