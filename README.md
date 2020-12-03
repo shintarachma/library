@@ -56,3 +56,10 @@ Adding profile, search, home, library fragment.
 
 Update layout profile
 ```
+
+#### 4. 02 December 2020
+```
+Fix login issue
+
+Adding sqlite database
+```
