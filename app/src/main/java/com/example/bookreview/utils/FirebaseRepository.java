@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.bookreview.view.activity.LoginActivity;
 import com.example.bookreview.view.activity.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -88,7 +89,6 @@ public class FirebaseRepository {
                                     Toast.LENGTH_SHORT).show();
 
                             Intent navigationIntent = new Intent(application.getApplicationContext(), MainActivity.class);
-                            navigationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             application.startActivity(navigationIntent);
 
                             Log.d(LOG_TAG, "signInWithEmail:success");
@@ -133,6 +133,9 @@ public class FirebaseRepository {
                             Toast.makeText(application.getApplicationContext(), R.string.registration_successful,
                                     Toast.LENGTH_SHORT).show();
 
+                            Intent loginIntent = new Intent(application.getApplicationContext(), LoginActivity.class);
+                            application.startActivity(loginIntent);
+
                         } else {
                             // If registration fails, display a message to the user.
                             Log.d(LOG_TAG, "createUserWithEmail:failure", task.getException());
@@ -164,9 +167,9 @@ public class FirebaseRepository {
                     Log.d(LOG_TAG, "addUserToDatabase:success");
 
                     // Add user to database successful, start navigation activity
-                    Intent navigationIntent = new Intent(application.getApplicationContext(), MainActivity.class);
-                    navigationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    application.startActivity(navigationIntent);
+//                    Intent navigationIntent = new Intent(application.getApplicationContext(), MainActivity.class);
+//                    navigationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                    application.startActivity(navigationIntent);
                 } else {
                     Log.d(LOG_TAG, "addUserToDatabase:failure", task.getException());
                 }

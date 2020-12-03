@@ -8,11 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
 
 import com.example.bookreview.R;
 import com.example.bookreview.view.fragment.HomeFragment;
@@ -77,9 +75,6 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
-
-        //get current user
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
