@@ -12,3 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
+.gradle/6.1.1/fileHashes/fileHashes.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.idea/caches/build_file_checksums.ser
+.idea/gradle.xml
