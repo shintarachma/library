@@ -15,7 +15,6 @@ import android.view.MenuItem;
 import com.example.bookreview.R;
 import com.example.bookreview.view.fragment.HomeFragment;
 import com.example.bookreview.view.fragment.LibraryFragment;
-import com.example.bookreview.view.fragment.ProfileFragment;
 import com.example.bookreview.view.fragment.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,11 +22,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static com.example.bookreview.utils.Constants.LOG_TAG;
 
-public class MainActivity extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener,
+public class MainActivity extends AppCompatActivity implements
         SearchFragment.OnFragmentInteractionListener, HomeFragment.OnFragmentInteractionListener,
         LibraryFragment.OnFragmentInteractionListener {
 
-    private final Fragment mProfileFragment = ProfileFragment.newInstance();
     private final Fragment mHomeFragment = HomeFragment.newInstance();
     private final Fragment mSearchFragment = SearchFragment.newInstance();
     private final Fragment mLibraryFragment = LibraryFragment.newInstance();
@@ -58,11 +56,6 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
                     mFragmentManager.beginTransaction().hide(mActiveFragment).show(mLibraryFragment).commit();
                     mActiveFragment = mLibraryFragment;
                     return true;
-
-                case R.id.nav_profile:
-                    mFragmentManager.beginTransaction().hide(mActiveFragment).show(mProfileFragment).commit();
-                    mActiveFragment = mProfileFragment;
-                    return true;
             }
             return false;
         }
@@ -91,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
 
         // Add the fragment instances to fragment manager
         mFragmentManager.beginTransaction().add(R.id.contentContainer, mHomeFragment).commit();
-        mFragmentManager.beginTransaction().add(R.id.contentContainer, mProfileFragment).hide(mProfileFragment).commit();
         mFragmentManager.beginTransaction().add(R.id.contentContainer, mSearchFragment).hide(mSearchFragment).commit();
         mFragmentManager.beginTransaction().add(R.id.contentContainer, mLibraryFragment).hide(mLibraryFragment).commit();
 

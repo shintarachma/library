@@ -9,7 +9,10 @@ import android.widget.Toast;
 
 import com.example.bookreview.view.activity.LoginActivity;
 import com.example.bookreview.view.activity.MainActivity;
+import com.example.bookreview.view.activity.PreLoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,9 +21,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.example.bookreview.R;
 import com.example.bookreview.model.User;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 import static com.example.bookreview.utils.Constants.LOG_TAG;
 import static com.example.bookreview.utils.Constants.USERS;
 
@@ -32,6 +41,8 @@ public class FirebaseRepository {
     // Singleton pattern field
     private static FirebaseRepository sInstance;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseFirestore mStore;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     /**
      * Singleton pattern to return an instance of Firebase Repository.
@@ -71,38 +82,6 @@ public class FirebaseRepository {
         return FirebaseStorage.getInstance().getReference().child(USERS).child(uid);
     }
 
-    /**
-     * Attempt sign in using Firebase Authentication.
-     *
-     * @param email       user email
-     * @param password    user password
-     * @param application application
-     */
-    public void signIn(final String email, final String password, final Application application) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, start navigation activity
-                            Toast.makeText(application.getApplicationContext(), R.string.sign_in_successful,
-                                    Toast.LENGTH_SHORT).show();
-
-                            Intent navigationIntent = new Intent(application.getApplicationContext(), MainActivity.class);
-                            application.startActivity(navigationIntent);
-
-                            Log.d(LOG_TAG, "signInWithEmail:success");
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(application.getApplicationContext(), R.string.error_incorrect_email_or_password,
-                                    Toast.LENGTH_SHORT).show();
-
-                            Log.d(LOG_TAG, "signInWithEmail:failure");
-                        }
-                    }
-                });
-    }
-
 
     /**
      * Attempt registration to Firebase.
@@ -111,7 +90,6 @@ public class FirebaseRepository {
      * @param password    user password
      * @param firstName   user first name
      * @param lastName    user last name
-     * @param imageUri    profile image uri
      * @param application application
      */
     public void register(final String email, final String password, final String firstName, final String lastName, final Application application) {
@@ -125,15 +103,34 @@ public class FirebaseRepository {
 
                             // Create new User object
                             String uid = mAuth.getCurrentUser().getUid();
-                            User newUser = new User(email, password, firstName, lastName, "");
+                            User newUser = new User(email,password,firstName,lastName);
+
+                            DatabaseReference userNode = database.getReference();
+                            userNode.child(uid).setValue(newUser);
 
                             // Add the new user to Database
-                            addUserToDatabase(uid, newUser, application);
+//                            DocumentReference documentReference = mStore.collection("users").document(uid);
+//                            Map<String,Object> user = new HashMap<>();
+//                            user.put("fName",firstName);
+//                            user.put("lName",lastName);
+//                            user.put("email",email);
+//                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                @Override
+//                                public void onSuccess(Void aVoid) {
+//                                    Log.d(TAG, "onSuccess: user Profile is created");
+//                                }
+//                            }).addOnFailureListener(new OnFailureListener() {
+//                                @Override
+//                                public void onFailure(@NonNull Exception e) {
+//                                    Log.d(TAG, "onFailure: " + e.toString());
+//                                }
+//                            });
+//                            addUserToDatabase(uid, newUser, application);
 
                             Toast.makeText(application.getApplicationContext(), R.string.registration_successful,
                                     Toast.LENGTH_SHORT).show();
 
-                            Intent loginIntent = new Intent(application.getApplicationContext(), LoginActivity.class);
+                            Intent loginIntent = new Intent(application.getApplicationContext(), PreLoginActivity.class);
                             application.startActivity(loginIntent);
 
                         } else {
@@ -152,29 +149,29 @@ public class FirebaseRepository {
                 });
     }
 
-    /**
-     * Add the user to Firabase Database.
-     *
-     * @param uid         user key
-     * @param newUser     user object
-     * @param application application
-     */
-    private void addUserToDatabase(String uid, User newUser, final Application application) {
-        getCurrentUserDatabaseReference(uid).setValue(newUser).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Log.d(LOG_TAG, "addUserToDatabase:success");
-
-                    // Add user to database successful, start navigation activity
-//                    Intent navigationIntent = new Intent(application.getApplicationContext(), MainActivity.class);
-//                    navigationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                    application.startActivity(navigationIntent);
-                } else {
-                    Log.d(LOG_TAG, "addUserToDatabase:failure", task.getException());
-                }
-            }
-        });
-    }
+//    /**
+//     * Add the user to Firabase Database.
+//     *
+//     * @param uid         user key
+//     * @param newUser     user object
+//     * @param application application
+//     */
+//    private void addUserToDatabase(String uid, User newUser, final Application application) {
+//        getCurrentUserDatabaseReference(uid).setValue(newUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                if (task.isSuccessful()) {
+//                    Log.d(LOG_TAG, "addUserToDatabase:success");
+//
+//                    // Add user to database successful, start navigation activity
+////                    Intent navigationIntent = new Intent(application.getApplicationContext(), MainActivity.class);
+////                    navigationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+////                    application.startActivity(navigationIntent);
+//                } else {
+//                    Log.d(LOG_TAG, "addUserToDatabase:failure", task.getException());
+//                }
+//            }
+//        });
+//    }
 
 }

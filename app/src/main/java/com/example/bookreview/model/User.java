@@ -9,7 +9,7 @@ public class User {
     public String password;
     public String firstName;
     public String lastName;
-    public String profileImage;
+//    public String profileImage;
 
     /**
      * Empty constructor
@@ -25,12 +25,11 @@ public class User {
      * @param firstName    first name
      * @param lastName     last name
      */
-    public User(String email, String password, String firstName, String lastName, String profileImage) {
+    public User(String email, String password, String firstName, String lastName) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.profileImage = profileImage;
     }
 
     /**
@@ -105,21 +104,21 @@ public class User {
         this.lastName = lastName;
     }
 
-    /**
-     * Get profile image
-     *
-     * @return profile image
-     */
-    public String getProfileImage() {
-        return profileImage;
-    }
-
-    /**
-     * Set profile image
-     *
-     * @param profileImage profile image
-     */
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
-    }
+//    /**
+//     * Get profile image
+//     *
+//     * @return profile image
+//     */
+//    public String getProfileImage() {
+//        return profileImage;
+//    }
+//
+//    /**
+//     * Set profile image
+//     *
+//     * @param profileImage profile image
+//     */
+//    public void setProfileImage(String profileImage) {
+//        this.profileImage = profileImage;
+//    }
 }

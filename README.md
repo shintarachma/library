@@ -42,24 +42,31 @@ Updating api server to google books api
 Update BooksService.java
 ```
 
-#### 4. 01 December 2020
+#### 5. 01 December 2020
 ```
 Adding navigation bar
 
 ```
 
-#### 4. 02 December 2020
+#### 6. 02 December 2020
 ```
 Updating main activity
 
-Adding profile, search, home, library fragment.
+Adding search, home, library fragment.
 
 Update layout profile
 ```
 
-#### 4. 02 December 2020
+#### 7. 03 December 2020
 ```
 Fix login issue
 
 Adding sqlite database
+```
+
+#### 7. 04 December 2020
+```
+Updating activity
+
+
 ```
