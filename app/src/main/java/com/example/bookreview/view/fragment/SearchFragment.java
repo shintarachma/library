@@ -92,7 +92,7 @@ public class SearchFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof ProfileFragment.OnFragmentInteractionListener) {
+        if (context instanceof SearchFragment.OnFragmentInteractionListener) {
             mListener = (SearchFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()

@@ -90,7 +90,7 @@ public class LibraryFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof ProfileFragment.OnFragmentInteractionListener) {
+        if (context instanceof LibraryFragment.OnFragmentInteractionListener) {
             mListener = (LibraryFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()

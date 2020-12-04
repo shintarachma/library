@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof ProfileFragment.OnFragmentInteractionListener) {
+        if (context instanceof HomeFragment.OnFragmentInteractionListener) {
             mListener = (HomeFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
