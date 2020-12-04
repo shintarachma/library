@@ -22,4 +22,8 @@ public class Volume {
     public String getSelfLink() {
         return selfLink;
     }
+
+    public VolumeInfo getVolumeInfo() {
+        return volumeInfo;
+    }
 }

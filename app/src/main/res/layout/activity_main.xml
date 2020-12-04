@@ -8,8 +8,13 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rl_book_list"
         android:layout_width="match_parent"
         android:layout_height="680dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_book_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 
     <RelativeLayout

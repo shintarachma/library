@@ -6,16 +6,37 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookreview.R;
+import com.example.bookreview.model.BookResponse;
+import com.example.bookreview.model.BooksAdapter;
+import com.example.bookreview.model.Volume;
+import com.example.bookreview.utils.APIClient;
+import com.example.bookreview.utils.BooksService;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class HomeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private RecyclerView rvBookList;
+    private TextView tvTitle;
+    private ImageView ivThumbnail;
+    private BooksAdapter aBookAdapter;
+    private List<Volume> bookList;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -67,8 +88,31 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        rvBookList = (RecyclerView) view.findViewById(R.id.rv_book_list);
+        getBookList();
+    }
 
+    public void getBookList() {
+        Retrofit retrofit = APIClient.getRetrofit();
+        BooksService service = retrofit.create(BooksService.class);
+        Call<BookResponse> call = service.getBooks("computer", 40);
 
+        call.enqueue(new Callback<BookResponse>() {
+            @Override
+            public void onResponse(Call<BookResponse> call, Response<BookResponse> response) {
+                bookList = response.body().getVolumes();
+
+                aBookAdapter = new BooksAdapter(bookList);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HomeFragment.this.getContext());
+                rvBookList.setLayoutManager(layoutManager);
+                rvBookList.setAdapter(aBookAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<BookResponse> call, Throwable t) {
+                call.cancel();
+            }
+        });
     }
 
     /**
