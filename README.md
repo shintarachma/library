@@ -70,3 +70,11 @@ Updating activity
 
 
 ```
+#### 8. 05 December 2020
+```
+Add SQLite Database for Post
+Add PostActivity, AddActivity, Adapter
+
+Add my_row layout, add book layout
+
+```
