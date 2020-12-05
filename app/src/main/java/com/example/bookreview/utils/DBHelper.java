@@ -8,12 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
     // id, book_id, book_name, author, rate, thoughts, datetime
+    private Context context;
     protected static final String DATABASE_NAME = "BookReviews.db";
     private static final String TABLE_NAME = "Reviews";
     protected static final String[] COLUMNS = {"ID", "BOOK_ID", "BOOK_NAME", "AUTHOR", "RATE", "THOUGHTS", "DATETIME"};
 
     public DBHelper(Context context){
         super(context, DATABASE_NAME, null, 1);
+        this.context = context;
     }
 
     @Override
